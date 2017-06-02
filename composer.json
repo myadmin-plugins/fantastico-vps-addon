@@ -21,7 +21,7 @@
         "ext-soap": "*",
 	"symfony/event-dispatcher": "*",
 	"detain/myadmin-plugin-installer": "dev-master",
-	"detain/fantastico-licensing": "*"
+	"detain/myadmin-fantastico-licensing": "*"
     },
     "autoload": {
         "psr-4": {"Detain\\MyAdminVpsFantastico\\": "src/"}
