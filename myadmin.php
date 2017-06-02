@@ -15,7 +15,7 @@ return [
 	'version' => '1.0.0',
 	'type' => 'addon',
 	'hooks' => [
-		'vps.load_addons' => ['Detain\MyAdminVpsFantastico', 'Load'],
+		'vps.load_addons' => ['Detain\MyAdminVpsFantastico\Plugin', 'Load'],
 		/* 'function.requirements' => ['Detain\MyAdminVpsFantastico\Plugin', 'Requirements'],
 		'licenses.settings' => ['Detain\MyAdminVpsFantastico\Plugin', 'Settings'],
 		'licenses.activate' => ['Detain\MyAdminVpsFantastico\Plugin', 'Activate'],
