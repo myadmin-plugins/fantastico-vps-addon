@@ -24,6 +24,6 @@
 	"detain/myadmin-fantastico-licensing": "*"
     },
     "autoload": {
-        "psr-4": {"Detain\\MyAdminVpsFantastico\\": "src/"}
+        "psr-4": {"Detain\\MyAdminVpsFantastico\\\": "src/"}
     }
 }
