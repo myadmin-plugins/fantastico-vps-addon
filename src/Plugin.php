@@ -21,4 +21,9 @@ class Plugin {
 		$service->add_addon($addon);
 	}
 
+	public static function Settings(GenericEvent $event) {
+		$module = 'vps';
+		$settings = $event->getSubject();
+		$settings->add_text_setting($module, 'Addon Costs', 'vps_fantastico_cost', 'VPS Fantastico License:', 'This is the cost for purchasing a fantastico license on top of a VPS.', $settings->get_setting('VPS_FANTASTICO_COST'));
+	}
 }

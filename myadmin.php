@@ -16,8 +16,8 @@ return [
 	'type' => 'addon',
 	'hooks' => [
 		'vps.load_addons' => ['Detain\MyAdminVpsFantastico\Plugin', 'Load'],
+		'vps.settings' => ['Detain\MyAdminVpsFantastico\Plugin', 'Settings'],
 		/* 'function.requirements' => ['Detain\MyAdminVpsFantastico\Plugin', 'Requirements'],
-		'licenses.settings' => ['Detain\MyAdminVpsFantastico\Plugin', 'Settings'],
 		'licenses.activate' => ['Detain\MyAdminVpsFantastico\Plugin', 'Activate'],
 		'licenses.change_ip' => ['Detain\MyAdminVpsFantastico\Plugin', 'ChangeIp'],
 		'ui.menu' => ['Detain\MyAdminVpsFantastico\Plugin', 'Menu'] */
