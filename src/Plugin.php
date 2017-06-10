@@ -15,7 +15,15 @@ class Plugin {
 		$addon = new \Addon();
 		$addon->set_module('vps')->set_text('Fantastico')->set_cost(VPS_FANTASTICO_COST)
 			->set_require_ip(true)->set_enable(function() {
+				$service_info = $service_order->get_service_info();
+				$settings = get_module_settings($service_order->get_module());
 				require_once 'include/licenses/license.functions.inc.php';
+				function_requirements('get_license_data');
+				$service_extra = get_license_data($service_info[$settings['PREFIX'].'_ip']);
+				myadmin_log($module, 'info', json_encode($service_extra), __LINE__, __FILE__);
+				function_requirements('activate_fantastico');
+				activate_fantastico($service_info[$settings['PREFIX'] . '_ip'], 2);
+				$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $service_info[$settings['PREFIX'] . '_id'], $service_info[$settings['PREFIX'] . '_ip'], $service_info[$settings['PREFIX'] . '_custid']);
 			})->set_disable(function() {
 			})->register();
 		$service->add_addon($addon);
