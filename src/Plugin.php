@@ -18,8 +18,8 @@ class Plugin {
 				$service_info = $service_order->get_service_info();
 				$settings = get_module_settings($service_order->get_module());
 				require_once 'include/licenses/license.functions.inc.php';
-				function_requirements('get_license_data');
-				$service_extra = get_license_data($service_info[$settings['PREFIX'].'_ip']);
+				function_requirements('get_cpanel_license_data_by_ip');
+				$service_extra = get_cpanel_license_data_by_ip($service_info[$settings['PREFIX'].'_ip']);
 				myadmin_log($module, 'info', json_encode($service_extra), __LINE__, __FILE__);
 				function_requirements('activate_fantastico');
 				activate_fantastico($service_info[$settings['PREFIX'] . '_ip'], 2);
