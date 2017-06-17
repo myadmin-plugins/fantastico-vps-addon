@@ -30,7 +30,7 @@ class Plugin {
 		$addon->set_module('vps')
 			->set_text('Fantastico')
 			->set_cost(VPS_FANTASTICO_COST)
-			->set_require_ip(true)
+			->set_require_ip(TRUE)
 			->set_enable([__CLASS__, 'Enable'])
 			->set_disable([__CLASS__, 'Disable'])
 			->register();
@@ -42,8 +42,8 @@ class Plugin {
 		$settings = get_module_settings($service_order->get_module());
 		require_once 'include/licenses/license.functions.inc.php';
 		function_requirements('activate_fantastico');
-		activate_fantastico($serviceInfo[$settings['PREFIX'] . '_ip'], 2);
-		$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $serviceInfo[$settings['PREFIX'] . '_id'], $serviceInfo[$settings['PREFIX'] . '_ip'], $serviceInfo[$settings['PREFIX'] . '_custid']);
+		activate_fantastico($serviceInfo[$settings['PREFIX'].'_ip'], 2);
+		$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $serviceInfo[$settings['PREFIX'].'_id'], $serviceInfo[$settings['PREFIX'].'_ip'], $serviceInfo[$settings['PREFIX'].'_custid']);
 	}
 
 	public static function Disable($service_order) {
