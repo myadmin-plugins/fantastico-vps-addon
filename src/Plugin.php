@@ -38,12 +38,12 @@ class Plugin {
 	}
 
 	public static function Enable($service_order) {
-		$service_info = $service_order->get_service_info();
+		$serviceInfo = $service_order->getServiceInfo();
 		$settings = get_module_settings($service_order->get_module());
 		require_once 'include/licenses/license.functions.inc.php';
 		function_requirements('activate_fantastico');
-		activate_fantastico($service_info[$settings['PREFIX'] . '_ip'], 2);
-		$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $service_info[$settings['PREFIX'] . '_id'], $service_info[$settings['PREFIX'] . '_ip'], $service_info[$settings['PREFIX'] . '_custid']);
+		activate_fantastico($serviceInfo[$settings['PREFIX'] . '_ip'], 2);
+		$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $serviceInfo[$settings['PREFIX'] . '_id'], $serviceInfo[$settings['PREFIX'] . '_ip'], $serviceInfo[$settings['PREFIX'] . '_custid']);
 	}
 
 	public static function Disable($service_order) {
