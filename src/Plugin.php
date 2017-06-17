@@ -31,8 +31,8 @@ class Plugin {
 			->set_text('Fantastico')
 			->set_cost(VPS_FANTASTICO_COST)
 			->set_require_ip(true)
-			->set_enable(['Detain\MyAdminVpsFantastico\Plugins', 'Enable'])
-			->set_disable()
+			->set_enable([__CLASS__, 'Enable'])
+			->set_disable([__CLASS__, 'Disable'])
 			->register();
 		$service->add_addon($addon);
 	}
