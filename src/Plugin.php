@@ -37,16 +37,16 @@ class Plugin {
 		$service->add_addon($addon);
 	}
 
-	public static function Enable(\Service_Order $service_order) {
-		$serviceInfo = $service_order->getServiceInfo();
-		$settings = get_module_settings($service_order->get_module());
+	public static function Enable(\Service_Order $serviceOrder) {
+		$serviceInfo = $serviceOrder->getServiceInfo();
+		$settings = get_module_settings($serviceOrder->get_module());
 		require_once 'include/licenses/license.functions.inc.php';
 		function_requirements('activate_fantastico');
 		activate_fantastico($serviceInfo[$settings['PREFIX'].'_ip'], 2);
 		$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $serviceInfo[$settings['PREFIX'].'_id'], $serviceInfo[$settings['PREFIX'].'_ip'], $serviceInfo[$settings['PREFIX'].'_custid']);
 	}
 
-	public static function Disable(\Service_Order $service_order) {
+	public static function Disable(\Service_Order $serviceOrder) {
 	}
 
 	public static function getSettings(GenericEvent $event) {
