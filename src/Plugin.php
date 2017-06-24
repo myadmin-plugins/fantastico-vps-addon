@@ -18,8 +18,8 @@ class Plugin {
 
 	public static function getHooks() {
 		return [
-			'vps.load_addons' => [__CLASS__, 'getAddon'],
-			'vps.settings' => [__CLASS__, 'getSettings'],
+			self::$module.'.load_addons' => [__CLASS__, 'getAddon'],
+			self::$module.'.settings' => [__CLASS__, 'getSettings'],
 		];
 	}
 
@@ -27,7 +27,7 @@ class Plugin {
 		$service = $event->getSubject();
 		function_requirements('class.Addon');
 		$addon = new \Addon();
-		$addon->setModule('vps')
+		$addon->setModule(self::$module)
 			->set_text('Fantastico')
 			->set_cost(VPS_FANTASTICO_COST)
 			->set_require_ip(TRUE)
@@ -39,7 +39,7 @@ class Plugin {
 
 	public static function doEnable(\Service_Order $serviceOrder, $repeatInvoiceId, $regexMatch = false) {
 		$serviceInfo = $serviceOrder->getServiceInfo();
-		$settings = get_module_settings($serviceOrder->getModule());
+		$settings = get_module_settings(self::$module);
 		require_once __DIR__.'/../../../../include/licenses/license.functions.inc.php';
 		function_requirements('activate_fantastico');
 		activate_fantastico($serviceInfo[$settings['PREFIX'].'_ip'], 2);
