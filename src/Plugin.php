@@ -6,8 +6,8 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 
 class Plugin {
 
-	public static $name = 'Fantastico Licensing VPS Addon';
-	public static $description = 'Allows selling of Fantastico Server and VPS License Types.  More info at https://www.netenberg.com/fantastico.php';
+	public static $name = 'Fantastico VPS Addon';
+	public static $description = 'Allows selling of Fantastico Licenses as a VPS Addon.  More info at https://www.netenberg.com/fantastico.php';
 	public static $help = 'It provides more than one million end users the ability to quickly install dozens of the leading open source content management systems into their web space.  	Must have a pre-existing cPanel license with cPanelDirect to purchase a fantastico license. Allow 10 minutes for activation.';
 	public static $module = 'vps';
 	public static $type = 'addon';
@@ -41,12 +41,14 @@ class Plugin {
 		$serviceInfo = $serviceOrder->getServiceInfo();
 		$settings = get_module_settings(self::$module);
 		require_once __DIR__.'/../../../../include/licenses/license.functions.inc.php';
+		myadmin_log(self::$module, 'info', self::$name.' Activation', __LINE__, __FILE__);
 		function_requirements('activate_fantastico');
 		activate_fantastico($serviceInfo[$settings['PREFIX'].'_ip'], 2);
 		$GLOBALS['tf']->history->add($settings['TABLE'], 'add_fantastico', $serviceInfo[$settings['PREFIX'].'_id'], $serviceInfo[$settings['PREFIX'].'_ip'], $serviceInfo[$settings['PREFIX'].'_custid']);
 	}
 
 	public static function doDisable(\Service_Order $serviceOrder) {
+
 	}
 
 	public static function getSettings(GenericEvent $event) {
