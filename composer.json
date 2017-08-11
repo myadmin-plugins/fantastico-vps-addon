@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Detain\\MyAdminVpsFantastico\\": "src\/"
+            "Detain\\MyAdminVpsFantastico\\": "src/"
         }
     }
 }
