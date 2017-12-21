@@ -39,7 +39,7 @@ class Plugin {
 	 */
 	public static function getRequirements(GenericEvent $event) {
 		$loader = $event->getSubject();
-		$loader->add_page_requirement('vps_add_fantastico', '/../vendor/detain/myadmin-fantastico-vps-addon/src/vps_add_cpanel.php');
+		$loader->add_page_requirement('vps_add_fantastico', '/../vendor/detain/myadmin-fantastico-vps-addon/src/vps_add_fantastico.php');
 	}
 
 	/**
