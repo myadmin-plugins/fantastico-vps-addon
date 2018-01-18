@@ -24,5 +24,5 @@ composer require detain/myadmin-fantastico-vps-addon
 
 ## License
 
-The Fantastico Addon for VPS Module in MyAdmin class is licensed under the LGPL-v2 license.
+The Fantastico Addon for VPS Module in MyAdmin class is licensed under the LGPL-v2.1 license.
 
