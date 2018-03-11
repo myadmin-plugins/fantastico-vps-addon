@@ -1,11 +1,11 @@
 <?php
 	/**
-	* VPS Functionality
-	* @author Joe Huss <detain@interserver.net>
-	* @copyright 2017
-	* @package MyAdmin
-	* @category VPS
-	*/
+	 * VPS Functionality
+	 * @author Joe Huss <detain@interserver.net>
+	 * @copyright 2017
+	 * @package MyAdmin
+	 * @category VPS
+	 */
 
 	/**
 	 * Adds Fantastico to a VPS
