@@ -11,7 +11,8 @@
 	 * Adds Fantastico to a VPS
 	 * @return void
 	 */
-	function vps_add_fantastico() {
+	function vps_add_fantastico()
+	{
 		function_requirements('class.AddServiceAddon');
 		$addon = new AddServiceAddon();
 		$addon->load(__FUNCTION__, 'Fantastico', 'vps', VPS_FANTASTICO_COST);
