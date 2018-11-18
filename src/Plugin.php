@@ -113,6 +113,6 @@ class Plugin
          * @var \MyAdmin\Settings $settings
          **/
         $settings = $event->getSubject();
-		$settings->add_text_setting(self::$module, __('Addon Costs'), 'vps_fantastico_cost', __('VPS Fantastico License'), __('This is the cost for purchasing a fantastico license on top of a VPS.'), $settings->get_setting('VPS_FANTASTICO_COST'));
+		$settings->add_text_setting(self::$module, _('Addon Costs'), 'vps_fantastico_cost', _('VPS Fantastico License'), _('This is the cost for purchasing a fantastico license on top of a VPS.'), $settings->get_setting('VPS_FANTASTICO_COST'));
 	}
 }
