@@ -41,10 +41,10 @@ class Plugin
 	 */
 	public static function getRequirements(GenericEvent $event)
 	{
-        /**
-         * @var \MyAdmin\Plugins\Loader $this->loader
-         */
-        $loader = $event->getSubject();
+		/**
+		 * @var \MyAdmin\Plugins\Loader $this->loader
+		 */
+		$loader = $event->getSubject();
 		$loader->add_page_requirement('vps_add_fantastico', '/../vendor/detain/myadmin-fantastico-vps-addon/src/vps_add_fantastico.php');
 	}
 
@@ -107,12 +107,12 @@ class Plugin
 	/**
 	 * @param \Symfony\Component\EventDispatcher\GenericEvent $event
 	 */
-    public static function getSettings(GenericEvent $event)
-    {
-        /**
-         * @var \MyAdmin\Settings $settings
-         **/
-        $settings = $event->getSubject();
+	public static function getSettings(GenericEvent $event)
+	{
+		/**
+		 * @var \MyAdmin\Settings $settings
+		 **/
+		$settings = $event->getSubject();
 		$settings->add_text_setting(self::$module, _('Addon Costs'), 'vps_fantastico_cost', _('VPS Fantastico License'), _('This is the cost for purchasing a fantastico license on top of a VPS.'), $settings->get_setting('VPS_FANTASTICO_COST'));
 	}
 }
