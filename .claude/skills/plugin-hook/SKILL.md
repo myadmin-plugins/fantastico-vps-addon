@@ -1,6 +1,6 @@
 ---
 name: plugin-hook
-description: Adds a new EventDispatcher hook to src/Plugin.php. Use when user says 'add hook', 'register event', 'new plugin event', or needs to respond to a new MyAdmin event. Covers getHooks() registration, GenericEvent callback signature, and myadmin_log instrumentation. Do NOT use for modifying the addon handler setup (AddonHandler, doEnable, doDisable). NOTE: for a plugin's contract/behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
+description: Adds a new EventDispatcher hook to src/Plugin.php. Use when user says 'add hook', 'register event', 'new plugin event', or needs to respond to a new MyAdmin event. Covers getHooks() registration, GenericEvent callback signature, and myadmin_log instrumentation. Do NOT use for modifying the addon handler setup (AddonHandler, doEnable, doDisable). For a plugin's contract or behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
 ---
 <!-- myadmin-contract-harness-notice -->
 > ### ⚠️ Read this before the rest of the file

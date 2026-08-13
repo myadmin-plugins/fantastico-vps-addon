@@ -1,6 +1,6 @@
 ---
 name: addon-lifecycle
-description: Implements or modifies enable/disable/settings methods in src/Plugin.php for MyAdmin VPS addon plugins. Use when user says 'enable logic', 'deactivate addon', 'add setting', 'activation flow', or changes doEnable/doDisable/getSettings. Covers AddonHandler fluent setup, get_module_settings, myadmin_log, and admin mail via \MyAdmin\Mail. Do NOT use for adding new hooks to getHooks() or creating new Plugin classes from scratch. NOTE: for a plugin's contract/behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
+description: Implements or modifies enable/disable/settings methods in src/Plugin.php for MyAdmin VPS addon plugins. Use when user says 'enable logic', 'deactivate addon', 'add setting', 'activation flow', or changes doEnable/doDisable/getSettings. Covers AddonHandler fluent setup, get_module_settings, myadmin_log, and admin mail via \MyAdmin\Mail. Do NOT use for adding new hooks to getHooks() or creating new Plugin classes from scratch. For a plugin's contract or behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
 ---
 <!-- myadmin-contract-harness-notice -->
 > ### ⚠️ Read this before the rest of the file

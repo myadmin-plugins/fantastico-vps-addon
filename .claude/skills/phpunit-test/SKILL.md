@@ -1,6 +1,6 @@
 ---
 name: phpunit-test
-description: Writes PHPUnit 9 tests under `tests/` for this plugin following patterns in `tests/VpsAddFantasticoTest.php`, `tests/PluginTest.php`, and `tests/FileExistenceTest.php`. Use when user says 'add test', 'write test', 'test coverage', or adds new src files. Covers source-content string assertions, regex matching, ReflectionClass structure checks, and file existence checks. Do NOT use for integration tests requiring a live MyAdmin runtime or database. NOTE: for a plugin's contract/behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
+description: Writes PHPUnit 9 tests under `tests/` for this plugin following patterns in `tests/VpsAddFantasticoTest.php`, `tests/PluginTest.php`, and `tests/FileExistenceTest.php`. Use when user says 'add test', 'write test', 'test coverage', or adds new src files. Covers source-content string assertions, regex matching, ReflectionClass structure checks, and file existence checks. Do NOT use for integration tests requiring a live MyAdmin runtime or database. For a plugin's contract or behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
 ---
 <!-- myadmin-contract-harness-notice -->
 > ### ⚠️ Read this before the rest of the file
